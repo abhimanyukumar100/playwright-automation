@@ -1,7 +1,7 @@
-import { test as base } from '@playwright/test';
+import { test as base, expect as baseExpect } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-type BaseFixtures = {
+export type BaseFixtures = {
   basePage: BasePage;
 };
 
@@ -11,4 +11,4 @@ export const test = base.extend<BaseFixtures>({
   },
 });
 
-export { expect } from '@playwright/test';
+export const expect = baseExpect;
